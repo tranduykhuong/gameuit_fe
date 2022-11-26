@@ -58,3 +58,27 @@
   transition-duration: 10s;
   transition-timing-function: ease-in-out;
 }
+.flexbox{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.head_flex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  
+}
+
+.text_size{
+  font-size: medium;
+}
+.button_login{
+  background-color: #c39109;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
