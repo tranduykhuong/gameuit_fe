@@ -19,7 +19,7 @@
 .serviceFree__content {
   margin: 0 auto;
   margin-top: 20px;
-  max-width: 1100px;
+  max-width: 1200px;
 }
 .serviceFree__navbar {
   display: flex;
@@ -52,21 +52,72 @@
   padding: 6px;
   border: 1px solid #ccc;
 }
-.workspace__item h6 {
+.workspace__item h5 {
   font-size: 16px;
   font-weight: 500;
   color: #090A36;
   margin-bottom: 4px;
 }
+.workspace__item h6 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #090A36;
+  margin-top: 14px;
+}
+.workspace__item input {
+  margin-bottom: 10px;
+}
 .workspace__item-btn {
   max-width: 300px;
-  margin-top: 20px;
+  margin-top: 36px;
 }
 .tags-list {
   width: 100%;
   border: 1px solid #ccc;
-  min-height: 300px;
+  min-height: 356px;
   padding: 0 10px;
+}
+.workspace__item-dropdown {
+  position: absolute;
+  background-color: #fff9f6;
+  width: 90%;
+  top: 40px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px rgba(0, 0  0, 0.5);
+  max-height: 200px;
+  overflow-y: scroll;
+  z-index: 100;
+}
+/* width */
+.workspace__item-dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.workspace__item-dropdown::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+/* Handle */
+.workspace__item-dropdown::-webkit-scrollbar-thumb {
+  background: #E6E9EB;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.workspace__item-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+.workspace__item-dropdown li {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+}
+.workspace__item-dropdown li:hover {
+  background-color: #f0b792;
+  color: #fff;
 }
 
 
@@ -98,9 +149,10 @@
 .result__item-description  h3 {
   font-size: 20px;
   font-weight: 600;
+  margin-top: 10px;
 }
 .description__list {
-  
+  text-align: left;
 }
 .description__list-item {
   display: flex;
@@ -110,4 +162,15 @@
 .description__list-item span {
   font-weight: 500;
   margin-right: 4px;
+  min-width: 64px;
+}
+.description__list-item p {
+  overflow: hidden;
+  height: 26px;
+  display: -webkit-box;
+  font-weight: 300;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  box-orient: vertical;
+  line-clamp: 1;
 }

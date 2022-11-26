@@ -45,13 +45,13 @@
   margin: 20px;
   border-radius: 50%;
   border: 3px solid #F0F2F5;
-  border-top-color: #7db850;
+  border-top-color: #eb9e6b;
   animation: 1.5s spin infinite linear;
 
 }
 
 .donut.multi {
-  border-bottom-color: #80bd52;
+  border-bottom-color: #db874f;
 }
 
 @keyframes spin {
