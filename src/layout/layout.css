@@ -6,6 +6,7 @@
   left: 0;
   z-index: 50;
   width: 100%;
+  background-color: var(--main-color) !important;
   animation: fixedNavbar 1s forwards;
 }
 .button-color_hover:hover {
@@ -31,4 +32,29 @@
     top: 0;
     opacity: 1;
   }
+}
+.brow_cl{
+  background-color: #B05E27;
+}
+.transperant_cl {
+  background-color: transparent;
+}
+.header_cus {
+  width: full ;
+  height: 80px;
+  font-style: Roboto;
+  font-weight: bold;
+  font-size: 24px;
+}
+.text_h_curr{
+  color: #FFD560;
+}
+.text_h {
+  color: #F5F5F5;
+}
+
+.btn_hover:hover {
+  text-decoration: none;
+  transition-duration: 10s;
+  transition-timing-function: ease-in-out;
 }

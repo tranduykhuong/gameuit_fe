@@ -2,12 +2,14 @@
 
 .h1_cus {
   color: var(--main-color);
-  color: #52796F;
+  /* color: //#52796F; */
+  color: 	#2038f2;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  margin-top: 320px;
+  margin-top: 350px;
   width: 900px;
+  text-shadow: 2px 2px #297358;
 }
 .center {
   left: 50%;
@@ -34,4 +36,15 @@ margin-top: 100px;
 .bg_cover {
   background-size: cover;
   background-size: 50%;
+}
+.brightness {
+  filter: brightness(0.25);
+  background-color: black;
+  opacity: 1.5;
+}
+.blue_btn {
+  background-color: 	#2038f2 !important;
+}
+.green {
+  color: #52796F;
 }

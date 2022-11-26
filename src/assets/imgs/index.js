@@ -1,6 +1,7 @@
 import enjoyDev from './EnjoyDev.jpg'
 import background from './image.jpg'
 import Logo from './logo.jpg'
+import LogoNoBg from './logoNoBg.png'
 import Tree from './tree.png'
 import home1 from './home1.jpg'
 import home2 from './home2.jpg'
@@ -15,5 +16,6 @@ export {
   home1,
   home2,
   home3, 
-  home4
+  home4,
+  LogoNoBg
 }
