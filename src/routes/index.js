@@ -8,7 +8,7 @@ import NotFound from './../pages/notFound/NotFound';
 import Login from '../pages/login/Login';
 import auth from '../store/auth';
 import ServiceFree from './../pages/serviceFree/ServiceFree';
-
+import ServiceVip from '../pages/serviceVip/serviceVip';
 const Navigation = () => {
   const authenticated = true;
 
@@ -37,7 +37,7 @@ const Navigation = () => {
               {/* SERVICES ROUTE */}
               <Route path="/services">
                   <Route index element={<ServiceFree />} />
-                  <Route path="premium" element={<NotFound />} />
+                  <Route path="premium" element={<ServiceVip />} />
               </Route>
 
               <Route path="*" name="notFound" element={<NotFound />} />
