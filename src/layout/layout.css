@@ -1,3 +1,5 @@
+@import "../styles/colors";
+
 .fixedNavbar {
   position: fixed;
   top: 0;
@@ -6,15 +8,27 @@
   width: 100%;
   animation: fixedNavbar 1s forwards;
 }
+.button-color_hover:hover {
+  color: white;
+  background-color: #c89777;
+}
+.button-color {
+  color: white;
+  background-color: var(--main-color);
+  opacity: 0.8;
+}
+.bg-color {
+  background-color: #ffe5d4;
+}
 
 @keyframes fixedNavbar {
   from {
-      top: -5rem;
-      opacity: 0;
+    top: -5rem;
+    opacity: 0;
   }
 
   to {
-      top: 0;
-      opacity: 1;
+    top: 0;
+    opacity: 1;
   }
 }
