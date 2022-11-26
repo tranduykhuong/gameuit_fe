@@ -52,11 +52,20 @@ const Header = () => {
         </Link>
        
       </div>
-      <Link to="/login">
+      {/* <Link to="/login">
             <div className={"text_size button_login  cursor pointer hover:drop-shadow-2xl  py-1 hover:text_h_hover "+ (path==="/login"? "  underline underline-offset-8 text_h_curr": "text_h ")} >
               ĐĂNG NHẬP
             </div>
+        </Link> */}
+      {
+        <div className="mr-10 text-xs">
+          Anh Duy
+          <Link to="/out">
+          <i class="fi fi-rr-exit"></i>
+          {/* <img src={Logo} className="pt-0 pb-0 ml-3 h-16 w-16" alt="logo" /> */}
         </Link>
+        </div>
+      }
     </div>
   );
 }

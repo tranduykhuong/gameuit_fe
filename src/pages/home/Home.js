@@ -37,7 +37,7 @@ const Home = () => {
       
     </div>
     {/* Các Thành phẩm  */}
-    < div className ="mb-24 pt-8 mt-8 justify-center ml-auto w-full justify-between">
+    < div className ="mb-24 pt-8 mt-8 ml-auto w-full center_image">
     <div className="text-[40px] mb-16 text_bold justify-center green text-center mx-auto justify-between w-full">Biến ngôi nhà của bạn thành khu vườn, tại sao không?</div>
 {/* 1 thành phẩm */}
       <div className="flex">
