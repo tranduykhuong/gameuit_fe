@@ -84,8 +84,8 @@ const Footer = () => {
                     shadow-md shadow-slate-600 rounded-md"
         >
           <div className="max-w-md">
-            <h2 className="font-bold text-xs leading-10">
-              Liên kết để hợp tác cùng dự án kế tiếp
+            <h2 className="font-bold text-base leading-10">
+              Hãy biến ngôi nhà của bạn thành khu vườn, tại sao không?
             </h2>
             <p className="my-1 font-normal text-slate-600 text-base">
               Làm việc cùng chúng tôi, những người có cùng đam mê
