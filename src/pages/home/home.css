@@ -1,5 +1,11 @@
 @import '../../styles/colors';
 
-h1 {
+.h1_cus {
   color: var(--main-color);
+  color: #52796F;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-top: 320px;
+  width: 900px;
 }
