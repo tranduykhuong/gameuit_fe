@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import useWindowEvent from '../hooks/useWindowEvent';
 import { useLocation } from 'react-router-dom';
 import Logo from "../assets/imgs/logo.jpg";
-
 import './layout.css'
 import { Link, Route } from 'react-router-dom';
 function Button({ content }) {
@@ -55,7 +54,7 @@ DỊCH VỤ VIP
     </Link>
     <Link to="/login">
         <div className={"ml-1 flex z-50 items-center cursor pointer hover:drop-shadow-2xl  px-1.5 py-1 hover:text_h_hover "+ (path==="/login"? "  underline underline-offset-8 text_h_curr": "text_h ")} >
-ĐĂNG NHẬP
+        Thiết kế ngay
         </div>
     </Link>
     </div>
