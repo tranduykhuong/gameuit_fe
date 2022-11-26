@@ -22,8 +22,9 @@ const Home = () => {
     <div className ="parent">
     {/* slide show */}
     <div className ="mb-5">
-      
-      <div className="z-10 absolute "><img src={background} alt="" className="m-24 mb-48 pb-24 p-0 w-[1200px] ml-44 "/></div>
+      <div className="z-10 absolute center_image ">
+        <img src={background} alt="" className="my-24 mb-48 pb-24 p-0 w-[1200px]"/>
+      </div>
       <div className="z-20 text-5xl font-bold absolute text-center text-justify h1_cus  shadow-2xl ">COVER GREEN - NỀN TẢNG GIẢI PHÁP CÂY XANH</div>
       <div className="absolute z-10 div1_cus mt-1 pt-1 center">
         <Link to="/services">
@@ -36,7 +37,7 @@ const Home = () => {
       
     </div>
     {/* Các Thành phẩm  */}
-    < div className ="mb-24 pt-8 mt-8 justify-center ml-auto w-full justify-between">
+    < div className ="mb-24 pt-8 mt-8 ml-auto w-full center_image">
     <div className="text-[40px] mb-16 text_bold justify-center green text-center mx-auto justify-between w-full">Biến ngôi nhà của bạn thành khu vườn, tại sao không?</div>
 {/* 1 thành phẩm */}
       <div className="flex">

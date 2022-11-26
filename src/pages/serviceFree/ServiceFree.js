@@ -139,6 +139,23 @@ const ServiceFree = () => {
               )}
               <div className="w-full relative">
                 <input type="text" value={textSearch} onChange={handleSearch} />
+                {textSearch !== "" && (
+                  <ul className="workspace__item-dropdown">
+                    {dataSearch.map((item) => {
+                      if (!item.item.status) {
+                        return (
+                          <li
+                            key={item.code}
+                            onClick={() => handleSelect(item.code)}
+                          >
+                            {item.item.des}
+                          </li>
+                        );
+                      }
+                      return ''
+                    })}
+                  </ul>
+                )}
               </div>
             </div>
 
