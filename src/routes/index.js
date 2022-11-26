@@ -5,9 +5,13 @@ import PrivateRoute from './privateRoute';
 import Layout from '../layout';
 import Home from '../pages/home/Home';
 import NotFound from './../pages/notFound/NotFound';
+import Login from '../pages/login/Login';
+import auth from '../store/auth';
 
 const Navigation = () => {
   const authenticated = true;
+
+  // console.log(auth.isLoginSuccess());
 
   return (
         <Routes>
@@ -15,7 +19,7 @@ const Navigation = () => {
 
           {/* AUTH ROUTE */}
           <Route element={<PrivateRoute isAllowed={authenticated} redirectPath="/home" />}>
-              <Route path="/login" name="login" element={<NotFound />} />
+              <Route path="/login" name="login" element={<Login />} />
               <Route path="/register" name="register" element={<NotFound />} />
           </Route>
           <Route path="/forgot" name="forgot" element={<NotFound />} />

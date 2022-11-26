@@ -14,6 +14,7 @@ const Home = () => {
       <div className="mt-60 text-3xl font-bold absolute text-center text-justify h1_cus">Biến ngôi nhà của bạn thành một khu vườn, tại sao không?</div>
       <img src={background} alt="" className="m-auto p-0 h-full w-full"/>
     </div>
+    {/*  */}
       <ButtonCT className="mb-6" primary borderRadius small iconLeft={background}>
         Submit
       </ButtonCT>
