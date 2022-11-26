@@ -3,7 +3,7 @@ import "./serviceFree.css";
 import { Link } from "react-router-dom";
 import ButtonCT from "./../../components/buttonCT/ButtonCT";
 import Tag from "./Tag/Tag";
-import { tagsRoom, tagsTree } from "./tagsData";
+import { tagNames, tagsRoom, tagsTree } from "./tagsData";
 import { axiosClient } from "../../api/axios";
 
 const ServiceFree = () => {
@@ -12,7 +12,8 @@ const ServiceFree = () => {
   const [dataTags, setDataTags] = useState(tagsTree);
   const [selectedTags, setSelectedTags] = useState([]);
   const [textSearch, setTextSearch] = useState("");
-  const [dataSearch, setDataSearch] = useState([]);
+
+  const [dataSearch, setDataSearch] = useState(tagsTree);
   const [response, setResponse] = useState([]);
 
   const handleSelect = (id) => {
@@ -20,13 +21,6 @@ const ServiceFree = () => {
     const newDataTags = dataTags;
     newDataTags[id.substring(1)][id[0]].status = true;
     setDataTags(newDataTags);
-    const newDataSearch = dataSearch.map((item) => {
-      if (item.code === id) {
-        item.item.status = true;
-      }
-      return item;
-    });
-    setDataSearch(newDataSearch);
   };
 
   const handleUnselected = (id) => {
@@ -38,19 +32,20 @@ const ServiceFree = () => {
   const handleSearch = (e) => {
     setTextSearch(e.target.value);
 
-    const data = [];
+    const data = {};
     for (const x in dataTags) {
+      const tmp = []
       for (let i = 0; i < dataTags[x].length; i++) {
         if (
           dataTags[x][i].des
             .toLowerCase()
             .includes(e.target.value.toLowerCase())
         ) {
-          data.push({
-            code: `${i}${x}`,
-            item: dataTags[x][i],
-          });
+          tmp.push(dataTags[x][i]);
         }
+      }
+      if (tmp.length) {
+        data[x] = tmp;
       }
     }
 
@@ -83,15 +78,19 @@ const ServiceFree = () => {
   };
 
   useEffect(() => {
-    if (type === "tree") setDataTags(tagsTree);
-    else setDataTags(tagsRoom);
+    if (type === "tree") {
+      setDataTags(tagsTree);
+      setDataSearch(tagsTree);
+    }
+    else {
+      setDataTags(tagsRoom);
+      setDataSearch(tagsRoom);
+    }
 
     setSelectedTags([]);
     setTextSearch("");
-    setDataSearch([]);
     setResponse([]);
 
-    // console.log(response);
   }, [type]);
 
   return (
@@ -140,88 +139,30 @@ const ServiceFree = () => {
               )}
               <div className="w-full relative">
                 <input type="text" value={textSearch} onChange={handleSearch} />
-                {textSearch !== "" && (
-                  <ul className="workspace__item-dropdown">
-                    {dataSearch.map((item) => {
-                      if (!item.item.status) {
-                        return (
-                          <li
-                            key={item.code}
-                            onClick={() => handleSelect(item.code)}
-                          >
-                            {item.item.des}
-                          </li>
-                        );
-                      }
-                    })}
-                  </ul>
-                )}
               </div>
             </div>
 
-            <div>
-              {type === "tree" ? <h6>Loại cây</h6> : <h6>Loại phòng</h6>}
-              {dataTags[Object.keys(dataTags)[0]].map((item, idx) => {
-                if (!item.status) {
-                  return (
-                    <span key={`${idx}${Object.keys(dataTags)[0]}`}>
-                      <Tag
-                        content={item.des}
-                        onClick={(e) =>
-                          handleSelect(`${idx}${Object.keys(dataTags)[0]}`)
-                        }
-                      />
-                    </span>
-                  );
-                }
-                return "";
-              })}
-            </div>
-
-            <div>
-              {type === "tree" ? (
-                <h6>Chế độ chăm sóc</h6>
-              ) : (
-                <h6>Kích thước phòng</h6>
-              )}
-              {dataTags[Object.keys(dataTags)[1]].map((item, idx) => {
-                if (!item.status) {
-                  return (
-                    <span key={`${idx}${Object.keys(dataTags)[1]}`}>
-                      <Tag
-                        content={item.des}
-                        onClick={(e) =>
-                          handleSelect(`${idx}${Object.keys(dataTags)[1]}`)
-                        }
-                      />
-                    </span>
-                  );
-                }
-                return "";
-              })}
-            </div>
-
-            <div>
-              {type === "tree" ? (
-                <h6>Loại lá</h6>
-              ) : (
-                <h6>Hướng phòng</h6>
-              )}
-              {dataTags[Object.keys(dataTags)[2]].map((item, idx) => {
-                if (!item.status) {
-                  return (
-                    <span key={`${idx}${Object.keys(dataTags)[2]}`}>
-                      <Tag
-                        content={item.des}
-                        onClick={(e) =>
-                          handleSelect(`${idx}${Object.keys(dataTags)[2]}`)
-                        }
-                      />
-                    </span>
-                  );
-                }
-                return "";
-              })}
+            <div className="tagsBox">
+              {Object.keys(dataSearch).map((k, idx) => (
+                <div key={+idx}>
+                <h6>{tagNames[k]}</h6>
+                {dataSearch[k].map((item, idx) => {
+                  if (!item.status) {
+                    return (
+                      <span key={`${idx}${k}`}>
+                        <Tag
+                          content={item.des}
+                          onClick={(e) =>
+                            handleSelect(`${idx}${k}`)
+                          }
+                        />
+                      </span>
+                    );
+                  }
+                  return "";
+                })}
+              </div>
+              ))}
             </div>
 
             <ButtonCT
@@ -256,7 +197,9 @@ const ServiceFree = () => {
             <div className="result__list">
               {response.map((item, idx) => (
                 <div className="result__item" key={+idx}>
-                  <img className="m-auto" src={item.image} alt="" />
+                  <div className="result__item-img">
+                    <img className="m-auto" src={item.image} alt="" />
+                  </div>
                   <div className="result__item-description">
                     <h3>{item?.name}</h3>
                     {type === 'tree'

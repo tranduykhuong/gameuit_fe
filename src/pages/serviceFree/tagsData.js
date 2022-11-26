@@ -121,6 +121,24 @@ const tagsTree = {
   }]
 }
 
+const tagNames = {
+  'treeType': "Loại cây",
+  'careLevel': "Chế độ chăm sóc",
+  'leafType': "Loại lá",
+  'habitat': "Môi trường sống",
+  'irrigationMode': "Chế độ tưới nước",
+  'direction': "Hướng bố trí",
+  'hasFlower': "Cây có hoa",
+  'sunLevel': "Mức độ phơi nắng",
+  'treeSize': "Kích thước cây",
+  'lifeTime': "Thời gian sống",
+  'temperature': "Nhiệt độ phù hợp",
+  'humidity': "Độ ẩm phù hợp",
+  'roomType': "Loại phòng",
+  'roomSizeType': "Kích thước phòng",
+  'roomVentilationLevel': "Độ thoáng của phòng",
+}
+
 const tagsRoom = {
   'roomType': [{
     'status': false,
@@ -187,5 +205,6 @@ const tagsRoom = {
 
 export {
   tagsTree,
-  tagsRoom
+  tagsRoom,
+  tagNames
 };
