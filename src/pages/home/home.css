@@ -9,3 +9,29 @@
   margin-top: 320px;
   width: 900px;
 }
+.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn_cus {
+  left: 50%;
+  transform: translateX(-50%);
+width: 300px !important;
+height: 60px;
+border-radius: 5px;
+margin-top: 100px;
+}
+.div1_cus {
+  margin-top: 400px;
+}
+
+.parent {
+  height: auto;
+}
+.text_bold {
+  font-weight: bold;
+}
+.bg_cover {
+  background-size: cover;
+  background-size: 50%;
+}
