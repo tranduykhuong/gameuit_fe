@@ -5,7 +5,7 @@ import Header from "./Header";
 
 const Layout = () => (
   <>
-    <div style={{ backgroundColor: "#f3f3f3" }}>
+    <div style={{ backgroundColor: "#fff" }}>
       <Header />
       <Outlet />
       <Footer />

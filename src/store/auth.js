@@ -2,7 +2,7 @@ const { localStorage } = global.window;
 
 const auth = {
   loginSuccess(data) {
-    // localStorage.isSuccess = true;
+    localStorage.isSuccess = true;
     localStorage.user = data.user;
   },
 

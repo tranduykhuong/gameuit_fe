@@ -7,6 +7,7 @@ import Home from '../pages/home/Home';
 import NotFound from './../pages/notFound/NotFound';
 import Login from '../pages/login/Login';
 import auth from '../store/auth';
+import ServiceFree from './../pages/serviceFree/ServiceFree';
 
 const Navigation = () => {
   const authenticated = true;
@@ -33,10 +34,10 @@ const Navigation = () => {
                   <Route path="/profile" name="profile" element={<NotFound />} />
               </Route>
 
-              {/* PRODUCT ROUTE */}
-              <Route path="/products">
-                  <Route index element={<NotFound />} />
-                  <Route path=":id" element={<NotFound />} />
+              {/* SERVICES ROUTE */}
+              <Route path="/services">
+                  <Route index element={<ServiceFree />} />
+                  <Route path="premium" element={<NotFound />} />
               </Route>
 
               <Route path="*" name="notFound" element={<NotFound />} />

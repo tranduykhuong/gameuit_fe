@@ -1,0 +1,16 @@
+@import '../../../styles/colors';
+
+.tag {
+  background-color: #E07A5F;
+  display: inline-block;
+  padding: 2px 14px;
+  border-radius: 20px;
+  min-width: 50px;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.tag p {
+  font-size: 16px;
+  color: #fff;
+}
