@@ -91,6 +91,7 @@ const ServiceFree = () => {
     setTextSearch("");
     setResponse([]);
 
+    console.log(response);
   }, [type]);
 
   return (
@@ -227,7 +228,7 @@ const ServiceFree = () => {
                       </li>
                       <li className="description__list-item">
                         <span>Loại lá: </span>
-                        <p>{item?.leafType ? dataTags['leafType'][+item?.leafType]?.des : ''}</p>
+                        <p>{item?.leafType !== undefined ? dataTags['leafType'][+item?.leafType]?.des : ''}</p>
                       </li>
                       <li className="description__list-item">
                         <span>Nơi bán: </span>
@@ -237,15 +238,15 @@ const ServiceFree = () => {
                     : <ul className="description__list">
                     <li className="description__list-item">
                       <span>Loại phòng: </span>
-                      <p>{item?.roomType ? dataTags['roomType'][item?.roomType]?.des : ''}</p>
+                      <p>{item?.roomType !== undefined ? dataTags['roomType'][item?.roomType]?.des : ''}</p>
                     </li>
                     <li className="description__list-item">
                       <span>Kích thước phòng: </span>
-                      <p>{item?.roomSizeType ? dataTags['roomSizeType'][item?.roomSizeType]?.des : ''}</p>
+                      <p>{item?.roomSizeType !== undefined ? dataTags['roomSizeType'][item?.roomSizeType]?.des : ''}</p>
                     </li>
                     <li className="description__list-item">
                       <span>Cây phù hợp: </span>
-                      <p>{item.matchingTrees ? item.matchingTrees.map(e => e.name) : ''}</p>
+                      <p>{item.matchingTrees !== undefined ? item.matchingTrees.map(e => e.name) : ''}</p>
                     </li>
                   </ul>
                   }
